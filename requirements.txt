@@ -1,0 +1,15 @@
+Flask==2.2.2
+flask-migrate==2.5.2
+flask-login
+flask-wtf
+flask_bcrypt
+flask_httpauth
+gunicorn==19.9.0
+psycopg2-binary==2.8.3
+xlrd
+requests
+wtforms_components
+Pillow
+itsdangerous
+openpyxl
+flask_mysqldb

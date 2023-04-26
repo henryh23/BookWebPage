@@ -1,0 +1,23 @@
+<h3>Insert Books</h3>
+
+<form action='' method = "POST">
+    <p>Title: <input type = "text" name = "title" required/></p>
+    <p>Subtitle: <input type = "text" name = "subtitle" /></p>
+    <p>Author First Name: <input type = "text" name = "author_first" /></p>
+    <p>Author Last Name: <input type = "text" name = "author_last" /></p>
+    <p>Year Published: <input type = "integer" name = "pub_year" /></p>
+    <p>Copyright Year: <input type = "integer" name = "copyright_year" /></p>
+    <p>Country: <input type = "text" name = "country" /></p>
+
+
+    <label for="publisher">Publisher:</label>
+    <select name="publisher" id="publisher">
+    <option value=None>No Publisher</option>  
+    {%for publisher in publishers%}
+    <option value="{{publisher.pub_id}}">{{publisher.pub_name}}</option>
+    {%endfor%}
+    </select>
+
+
+    <p><input type = "submit" value = "Submit" /></p>
+  </form>

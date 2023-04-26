@@ -1,0 +1,29 @@
+<html>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+
+<title>Sample Template</title>
+
+<h3>{{title}}</h3>
+  <table>
+    
+    <tr>
+      {%for header in headers%}
+      <th>{{header}}</th>
+      {%endfor%}
+    </tr>
+    {%for row in table_rows%}
+    <tr>
+      {% for column in row %}
+      <td>{{column}}</td>
+      {%endfor%}
+    </tr>
+    {%endfor%}
+  </table>
+
+
+</html>
