@@ -155,7 +155,8 @@ def show_update2(selected_book):
     books = cur.fetchall()
 
     rows = []
-#test
+#testeewew
+
     for book in books:
         book_id = book[0]
         title = book[1]
