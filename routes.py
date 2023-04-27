@@ -109,6 +109,8 @@ def show_insert():
         copyright_year = request.form["copyright_year"] or None
         country = request.form["country"] or None
         publisher = request.form['publisher'] or None
+        if publisher == "None":
+            publisher =None
 
         cur.execute("INSERT INTO Book (title, subtitle, author_first, author_last, pub_year, copyright_year, country, pub_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", (title, subtitle, author_first, author_last, pub_year, copyright_year, country,publisher))
         
@@ -202,7 +204,8 @@ def show_update2(selected_book):
         copyright_year = request.form.get('copyright_year') or None
         country = request.form.get('country') or None
         publisher = request.form.get('publisher') or None
-
+        if publisher == "None":
+            publisher =None
         cur.execute("UPDATE Book SET title=%s, subtitle=%s, author_first=%s, author_last=%s, pub_year=%s, copyright_year=%s, country=%s, pub_id=%s WHERE book_id=%s", (title, subtitle, author_first, author_last, pub_year, copyright_year, country, publisher, book_id))
 
         mysql.connection.commit()

@@ -12,7 +12,7 @@
 
     <label for="publisher">Publisher:</label>
     <select name="publisher" id="publisher">
-    <option value=None>No Publisher</option>  
+    <option value="None">No Publisher</option>  
     {%for publisher in publishers%}
     <option value="{{publisher.pub_id}}">{{publisher.pub_name}}</option>
     {%endfor%}
