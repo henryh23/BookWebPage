@@ -209,3 +209,32 @@ def show_update2(selected_book):
         return redirect('/update_book')
     #sql alchemy
   #source tree, git
+
+@main_blueprint.route('/delete_book' , methods = ['GET','POST'])
+def show_delete():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT book_id, title from Book")
+    books = cur.fetchall()
+
+    rows = []
+
+    for book in books:
+        book_id = book[0]
+        title = book[1]
+        
+        rows.append({
+            'book_id': book_id, 
+            'title': title,
+            })
+        
+
+
+    if request.method == 'GET':
+
+
+        return render_template('/predelete.html', books = rows)
+ 
+    if request.method == 'POST':
+
+        selected_book = request.form['book']
+        return redirect(f'/update_book/change/{selected_book}')
