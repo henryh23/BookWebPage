@@ -18,18 +18,18 @@ def show_sample_template():
     cur.execute("SELECT b.book_id, b.title, b.subtitle, b.author_first, b.author_last, b.pub_year, b.copyright_year, b.country, p.pub_name FROM Book AS b LEFT OUTER  JOIN Publisher AS p ON b.pub_id = p.pub_id ORDER BY book_id")
     books = cur.fetchall()
     book_string = str(books)
-    title = "Book table!"
+    title = "Books"
 
     header_list = [
-        'book_id',
-        'title',
-        'subtitle',
-        'author_first',
-        'author_last',
-        'pub_year',
-        'copyright_year',
-        'country',
-        'pub_name'
+        'Book ID',
+        'Title',
+        'Subtitle',
+        'Author First',
+        'Author Last',
+        'Publishing Year',
+        'Copyright Year',
+        'Country',
+        'Publisher'
         ]
     
     rows = []
@@ -57,13 +57,13 @@ def show_publisher_template():
     cur.execute("SELECT * FROM Publisher")
     publishers = cur.fetchall()
     publisher_string = str(publishers)
-    title = "Publisher table!"
+    title = "Publishers"
 
     header_list = [
-        'pub_id',
-        'pub_name',
-        'pub_address',
-        'pub_phoneNumber'
+        'Publisher Id',
+        'Name',
+        'Address',
+        'Phone Number'
         ]
     
     rows = []
@@ -80,7 +80,7 @@ def show_publisher_template():
         table_rows = rows,
     )
 
-
+#Test for git
 @main_blueprint.route('/upload_book' , methods = ['GET','POST'])
 def show_insert():
 
