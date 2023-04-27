@@ -1,28 +1,14 @@
-<h3>Editing {{books.title}}</h3>
+<h3>Select a Book to Delete</h3>
 
 <form action='' method = "POST">
 
-    <p>Title: <input type="text" name="title" value = "{{books[0].title}}"/></p>
-    <p>Subtitle: <input type="text" name="subtitle" value = "{{books[0].subtitle}}"/></p>
-    <p>Author First Name: <input type="text" name="author_first" value = "{{books[0].author_first}}"/></p>
-    <p>Author Last Name: <input type="text" name="author_last" value = "{{books[0].author_last}}"/></p>
-    <p>Year Published: <input type="text" name="pub_year" value = "{{books[0].pub_year}}"/></p>
-    <p>Copyright Year: <input type="text" name="copyright_year" value = "{{books[0].copyright_year}}"/></p>
-    <p>Country: <input type="text" name="country" value = "{{books[0].country}}"/></p>
-
-    <label for="publisher">Publisher:</label>
-    <select name="publisher" id="publisher">
-    <option value=None>No Publisher</option>  
-    {%for publisher in publishers%}
-    <option value="{{publisher.pub_id}}">{{publisher.pub_name}}</option>
+    <label for="book">Book:</label>
+    <select name="book" id="book">
+    {%for book in books%}
+    <option value="{{book.book_id}}">{{book.book_id}}: {{book.title}}</option>
     {%endfor%}
     </select>
 
+
     <p><input type = "submit" value = "Submit" /></p>
   </form>
-
-  <script>
-
-
-
-  </script>
