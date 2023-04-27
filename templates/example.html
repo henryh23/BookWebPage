@@ -1,32 +1,37 @@
 <html>
   <style>
-table, th, td {
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-th, td {
-  background-color: #ffffff;
-}
-  </style>
 
-<title>Sample Template</title>
-
-<h3>{{title}}</h3>
-  <table>
+    table, th, td {
+      border: 1px solid #333333;
+      border-collapse: collapse;
+    }
     
-    <tr>
-      {%for header in headers%}
-      <th>{{header}}</th>
-      {%endfor%}
-    </tr>
-    {%for row in table_rows%}
-    <tr>
-      {% for column in row %}
-      <td>{{column}}</td>
-      {%endfor%}
-    </tr>
-    {%endfor%}
-  </table>
+    th, td {
+      background-color: #EDEDED;
+    }
+  </style>
+  
+  <title>Sample Template</title>
+  
+  <div >
+    <font size="+5">{{title}}</font>
+  </div>
 
-
+  <div id="container">
+    <table>
+      <tr>
+        {% for header in headers %}
+        <th>{{header}}</th>
+        {% endfor %}
+      </tr>
+      
+      {% for row in table_rows %}
+      <tr>
+        {% for column in row %}
+        <td>{{column}}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
 </html>
