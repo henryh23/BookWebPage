@@ -1,8 +1,8 @@
-<h3>Select Book to Update</h3>
+<h3>Select a Book to Delete</h3>
 
 <form action='' method = "POST">
 
-    <label for="book"></label>
+    <label for="book">Book:</label>
     <select name="book" id="book">
     {%for book in books%}
     <option value="{{book.book_id}}">{{book.book_id}}: {{book.title}}</option>
@@ -10,5 +10,5 @@
     </select>
 
 
-    <p><input type = "submit" value = "Update Book" /></p>
+    <p><input type = "submit" value = "Submit" /></p>
   </form>
