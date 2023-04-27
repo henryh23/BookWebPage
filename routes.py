@@ -235,9 +235,10 @@ def show_delete():
     if request.method == 'GET':
 
 
-        return render_template('/predelete.html', books = rows)
+        return render_template('/delete.html', books = rows)
  
     if request.method == 'POST':
-
         selected_book = request.form['book']
-        return redirect(f'/update_book/change/{selected_book}')
+        cur.execute("DELETE FROM Book WHERE book_id = %s", (selected_book,))
+        mysql.connection.commit()
+        return redirect('/delete_book')
