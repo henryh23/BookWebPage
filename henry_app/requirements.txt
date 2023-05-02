@@ -13,3 +13,4 @@ Pillow
 itsdangerous
 openpyxl
 flask_mysqldb
+SQLAlchemy<1.4
