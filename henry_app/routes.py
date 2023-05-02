@@ -6,7 +6,9 @@ main_blueprint = Blueprint("main", __name__)
 
 @main_blueprint.route('/')
 def show_home():
-    return ("<html><h1>Welcome: I like Tables!</h1></html>")
+    return render_template(
+        '/index.html'
+    )
 
 
 @main_blueprint.route('/books')
